@@ -1,0 +1,36 @@
+
+<div class="bg-image2"><br><br><br>
+<!-- <div class="container mt-5b ">
+  <div class="row" *ngIf="blogs.length === 0">No blogs to show.</div>
+  <div class="row ">
+    <div *ngFor="let blog of blogs.reverse()" class="col-4 ">
+      <div class="card shadow">
+        <div class="card-body">
+          <div class="card-header card text-center ">
+            <h5>
+              <b
+                ><i>{{ blog.title }}</i></b
+              >
+            </h5>
+          </div>
+          <p class="card-text ">{{ blog.description }}</p>
+        </div>
+      </div>
+      <br />
+    </div> -->
+    <div class="row" *ngIf="blogs.length === 0">No blogs to show.</div>
+    <div class="card col-md-6 col-lg-4 ">
+      <!-- <img class="card-img-top" src="..."> -->
+      <div class="card-body" *ngFor="let blog of blogs.reverse()" >
+        <h5 class="card-title"><h5>
+          <b
+            ><i>{{ blog.title }}</i></b
+          >
+        </h5></h5>
+        <p class="card-text">{{ blog.description }}</p>
+        <a href="#" class="btn btn-primary">Button</a>
+      </div>
+    </div>
+  </div>
+<!-- </div> -->
+<!-- </div> -->

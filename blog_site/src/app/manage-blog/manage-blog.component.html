@@ -1,0 +1,45 @@
+<div class="bg-image2">
+  <br />
+  <div class="container card">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Serial Number</th>
+          <th scope="col">Blog Title</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let blog of blogs; let i = index">
+          <th scope="row">{{ i + 1 }}</th>
+          <td>{{ blog.title }}</td>
+          <td>
+            <!-- <span class="btn btn-primary me-3" (click)="editBlog(i)">Edit</span>
+          <span class="btn btn-primary me-3"(click)="deletePost(i)">Delete</span>
+          <span class="btn btn-primary"(click)="viewBlog(i)">View</span> -->
+            <div class="d-flex justify-content-between">
+              <button
+                class="btn btn-primary flex-grow-1 flex-sm-grow-0"
+                (click)="editBlog(i)"
+              >
+                Edit
+              </button>
+              <button
+                class="btn btn-secondary flex-grow-1 flex-sm-grow-0"
+                (click)="deletePost(i)"
+              >
+                Delete
+              </button>
+              <button
+                class="btn btn-success flex-grow-1 flex-sm-grow-0"
+                (click)="viewBlog(i)"
+              >
+                View
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
