@@ -10,7 +10,7 @@ export class AppComponent implements OnInit {
   // receivedData:any;
   // receiveData(data:any){
   //   this.receivedData=data;
-  blogs: [] = [];
+  blogs: [] = JSON.parse(localStorage.getItem('blogs')||"[]");
   ngOnInit() {
     // this.form.value
     localStorage.setItem('blogs', JSON.stringify(this.blogs));

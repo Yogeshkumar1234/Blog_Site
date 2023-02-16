@@ -2,7 +2,8 @@
 .bg-image {
     background-image: url('/assets/coffee.jpg');
     background-size: cover;
-    height:100vh;
+    background-repeat: repeat;
+    /* height:100vh; */
     background-position: center;
     filter: blur(8px);
   -webkit-filter: blur(8px);
@@ -11,8 +12,18 @@
   .bg-image2{
     background-image: url('/assets/typewriter.jpg');
     background-size: cover;
+    background-repeat: repeat;
+    /* height:100vh; */
+    background-position: center;
+  }
+  .bg-image3{
+    background-image: url('/assets/coffee.jpg');
+    background-size: cover;
+    /* background-repeat: repeat; */
     height:100vh;
     background-position: center;
+    filter: blur(8px);
+  -webkit-filter: blur(8px);
   }
   .bg-text {
     background-color: rgb(0,0,0); /* Fallback color */
@@ -29,6 +40,32 @@
     padding: 20px;
     text-align: center;
   }
+  @media screen and (max-width: 600px) {
+    .bg-text
+     {
+        width: 90%;
+        height: 90%;
+    }
+    .my{
+      width: 1vw;
+      
+      height: 90%;
+
+    }
+}
+@media screen and (max-width: 1500px) {
+  
+  .bg-text
+   {
+      width: 80%;
+      height: 80%;
+  }
+  .my{
+    width: 90%;
+    height: 90%;
+
+  }
+}
   .responsive-card {
     width: 100%;
     max-width: 500px;

@@ -1,36 +1,46 @@
+<div class="bg-image2">
+  <br /><br /><br />
 
-<div class="bg-image2"><br><br><br>
-<!-- <div class="container mt-5b ">
-  <div class="row" *ngIf="blogs.length === 0">No blogs to show.</div>
-  <div class="row ">
-    <div *ngFor="let blog of blogs.reverse()" class="col-4 ">
-      <div class="card shadow">
-        <div class="card-body">
-          <div class="card-header card text-center ">
-            <h5>
-              <b
-                ><i>{{ blog.title }}</i></b
-              >
-            </h5>
+  <div class="container">
+    <div *ngIf="blogs.length === 0" style="color: white">
+      <b>NO blogs:=> You Need to Create Them</b>
+    </div>
+    <div class="row">
+      <ng-container *ngFor="let post of blogs.reverse(); let i = index">
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <div class="card-body d-flex flex-column bd-highlight mb-3">
+              <div>
+                <h5 class="card-title card-header card text-center">
+                  {{ post.title }}
+                </h5>
+                <br />
+              </div>
+
+              <p *ngIf="!post.showContent">
+                {{ post.description | slice : 0 : 10
+                }}<span *ngIf="post.description.length > 10">...</span
+                ><button
+                  class="btn btn-primary d-flex flex-column bd-highlight mb-3"
+                  *ngIf="post.description.length > 10"
+                  (click)="toggleContent(post)"
+                >
+                  Read more
+                </button>
+              </p>
+              <p *ngIf="post.showContent">
+                {{ post.description
+                }}<button
+                  class="btn btn-primary d-flex flex-column bd-highlight mb-3"
+                  (click)="toggleContent(post)"
+                >
+                  Read less
+                </button>
+              </p>
+            </div>
           </div>
-          <p class="card-text ">{{ blog.description }}</p>
         </div>
-      </div>
-      <br />
-    </div> -->
-    <div class="row" *ngIf="blogs.length === 0">No blogs to show.</div>
-    <div class="card col-md-6 col-lg-4 ">
-      <!-- <img class="card-img-top" src="..."> -->
-      <div class="card-body" *ngFor="let blog of blogs.reverse()" >
-        <h5 class="card-title"><h5>
-          <b
-            ><i>{{ blog.title }}</i></b
-          >
-        </h5></h5>
-        <p class="card-text">{{ blog.description }}</p>
-        <a href="#" class="btn btn-primary">Button</a>
-      </div>
+      </ng-container>
     </div>
   </div>
-<!-- </div> -->
-<!-- </div> -->
+</div>

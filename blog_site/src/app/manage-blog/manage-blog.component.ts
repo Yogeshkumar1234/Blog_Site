@@ -27,9 +27,10 @@ export class ManageBlogComponent implements OnInit {
 
   }
   deletePost(index:number) {
+    if(window.confirm('Are sure you want to delete this item ?')){
     let blogs = JSON.parse(localStorage.getItem('blogs') || '[]');
     blogs.splice(index, 1);
     localStorage.setItem('blogs', JSON.stringify(blogs));
-    this.blogs = blogs;
+    this.blogs = blogs;}
   }
 }
